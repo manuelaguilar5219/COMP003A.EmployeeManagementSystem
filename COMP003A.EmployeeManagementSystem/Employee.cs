@@ -64,5 +64,13 @@ namespace COMP003A.EmployeeManagementSystem
                 _salary = value;
             }
         }
+        public void PrintFullName()
+        {
+            Console.WriteLine($"Name: {FirstName} {MiddleName} {LastName}");
+        }
+        public void DisplayEmployeeInfo()
+        {
+            Console.WriteLine($"Employee ID: {EmployeeId}");
+        }
     }
 }
