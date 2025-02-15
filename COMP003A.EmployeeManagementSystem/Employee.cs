@@ -14,6 +14,14 @@ namespace COMP003A.EmployeeManagementSystem
         private string _lastName;
         private double _salary;
 
+        public Employee(string employeeId, string firstName, string middleName, string lastName, double salary)
+        {
+            _employeeId = employeeId;
+            FirstName = firstName;
+            MiddleName = middleName;
+            LastName = lastName;
+            Salary = salary;
+        }
         public string EmployeeId
         {
             get { return _employeeId; }
@@ -27,7 +35,7 @@ namespace COMP003A.EmployeeManagementSystem
                 {
                     throw new ArgumentException("Your first name can't be blank!");
     
-            }
+                }
                 _firstName = value;
             }
         }
@@ -56,21 +64,30 @@ namespace COMP003A.EmployeeManagementSystem
             get { return _salary; }
             set
             {
-                if (Salary < 0)
+                if (value < 0)
                 {
                     throw new ArgumentException("Salary can't be less than 0!");
-    
-            }
+                }
                 _salary = value;
             }
         }
         public void PrintFullName()
         {
-            Console.WriteLine($"Name: {FirstName} {MiddleName} {LastName}");
+            if (string.IsNullOrEmpty(MiddleName))
+            {
+                Console.WriteLine($"{FirstName} {LastName}");
+            }
+            else
+            {
+                Console.WriteLine($"{FirstName} {MiddleName} {LastName}");
+            }
         }
         public void DisplayEmployeeInfo()
         {
             Console.WriteLine($"Employee ID: {EmployeeId}");
+            Console.Write($"Name: ");
+            PrintFullName();
+            Console.WriteLine($"Salary: ${Salary:N2}");
         }
     }
 }
