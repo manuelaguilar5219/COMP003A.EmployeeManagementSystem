@@ -30,7 +30,18 @@ namespace COMP003A.EmployeeManagementSystem
 
                 Employee employee = new Employee(employeeId, firstName, middleName, lastName, salary);
                 
+                Console.WriteLine("\nEmployee Created Successfully!\n");
                 employee.DisplayEmployeeInfo();
+                Console.WriteLine("");
+                
+                Department hrDepartment = new HRDepartment();
+                Department itdepartment = new ITDepartment();
+
+                hrDepartment.DisplayDepartmentInfo();
+                ((IDepartmentOperations)hrDepartment).Operate();
+                Console.WriteLine("");
+                itdepartment.DisplayDepartmentInfo();
+                ((IDepartmentOperations)itdepartment).Operate();
             }
             catch (ArgumentException ex)
             { 

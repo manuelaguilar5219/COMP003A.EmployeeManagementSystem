@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace COMP003A.EmployeeManagementSystem
 {
+    /// <summary>
+    /// Employee class with employee information and salary
+    /// </summary>
     public class Employee
     {
         private string _employeeId;
