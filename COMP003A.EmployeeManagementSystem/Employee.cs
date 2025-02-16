@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Author: Manuel Aguilar
+// Course: COMP003A
+// Faculty: Jonathan Cruz
+// Purpose: Employee management system demonstrating OOP principles in C#
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
